@@ -1,0 +1,151 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title></title>
+  <style type="text/css" media="screen">
+     @font-face {
+    font-family: 'abc';
+    src: local('Abc'),
+         url('{% static 'fonts/abc.ttf' %} format("truetype")');
+  }
+  </style>
+	<link rel="stylesheet" href="">
+
+	<link rel="stylesheet" href="{% static "customcss/index.css" %}">
+  	<link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.css" %}">
+  
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="col-md-4 col-lg-6 bg-image text-white text-center ">
+        <div style="margin-top: 300px" class="text-center text-white ">
+          <h1 class="animated fadeIn h1">M.Sc.Computer Science</h1>
+          <h3 class="h3">The School of Excellence and Empower.</h3>
+          <p class="h6">Make it Good.</p>
+        </div>
+    </div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <div class="form1">
+                
+              <form class="login-form" action="login" method="post">
+                {% csrf_token %}
+                <span style="color: Red">{{ error }}</span>
+              <h3 class="login-heading mb-4">Login</h3>
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="l_email" required autofocus>
+                  <label for="inputEmail" id="lbl_email" >Email</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="l_pass" required>
+                  <label for="inputPassword">Password</label>
+                </div>
+
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" id="btn-login" type="submit">Sign in</button>
+                <div class="text-center message">
+                  <span class="small">Not Register</span>
+                  <a class="small " href="#">Register Here</a></div>
+              </form>
+
+              <form class="register-form" action="register" method="post">
+                <h3 class="register-heading mb-4">Regester</h3>
+                {% csrf_token %}
+                <div class="form-label-group">
+                  <input type="text" id="username" class="form-control" placeholder="username" name="r_uname" required>
+                  <label for="username">Username</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input type="text" id="remail" class="form-control was-validated" placeholder="Email" name="r_email" required >
+                  <label for="remail">Email</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input type="password" id="rpassword" class="form-control" placeholder="Password" name="r_pass" required>
+                  <label for="rpassword">Password</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input type="password" id="r_c_password" class="form-control" placeholder="confirmpassword" name="r_cpass" required>
+                  <label for="r_c_password">ConfirmPassword</label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" id="#btn-login" type="submit">Register</button>
+                <div class="text-center message">
+                  <span class="small">Already Registered</span>
+                  <a class="small " href="#">Login Here</a></div>      
+              </form>
+
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+
+<script >
+   $('.message a').click(function(){
+    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");});
+ </script>
+
+ <script>
+$('#btn_login').click(function(event) {
+  /* Act on the event */
+  if($('#inputEmail').eq(""))
+  {
+    $('#lbl_email').css("color":"red")
+  }
+});
+ </script>
+
+	<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.min.js"></script>
+</body>
+</html>

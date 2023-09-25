@@ -1,0 +1,26 @@
+{% extends "BaseEdit.html" %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+
+<form action="/updateworkdetails/{{workinfo.id}}/{{workinfo.Uid}}" method="post" >
+	
+{% csrf_token %}
+<div class="container p-5">
+	<div class="card p-5">
+		<div class="card-header h2">Working Details</div>
+		{% render_field workform.Uid value=workinfo.Uid%}
+		{% for field in workform.visible_fields %}
+		<div class="my-3">
+    			<label for="" class="h6 ">{{field.name}}</label>
+    			{%render_field field class='form-control col-6' %}
+    		</div>
+	{% endfor %}
+	<button type="submit" class="btn btn-success">Submit</button>
+	</div>
+	
+</div>
+</form>
+	
+{% endblock content %}

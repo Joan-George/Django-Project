@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+
+
+{% load widget_tweaks %}
+ {% block body %}
+ 	{% block navi %}
+		{% include "navi.html" %} 
+	{% endblock navi%}
+   
+   {% block content %} 
+    	{% include "homecontent.html" %}
+   {% endblock content %}
+{% endblock  %} 

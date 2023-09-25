@@ -1,0 +1,26 @@
+{% extends "BaseAdd.html" %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+
+<form action="/addeducation/{{id}}" method="post" >
+	
+{% csrf_token %}
+<div class="container p-5">
+	<div class="card p-5">
+		<div class="card-header h2">Add Education Qualification</div>
+		{% render_field form.Uid value=id%}
+		{% for field in form.visible_fields %}
+		<div class="my-3">
+    			<label for="" class="h6 ">{{field.name}}</label>
+    			{%render_field field class='form-control col-6' %}
+    		</div>
+	{% endfor %}
+	<button type="submit" class="btn btn-success">Submit</button>
+	</div>
+	
+</div>
+</form>
+	
+{% endblock content %}

@@ -1,0 +1,115 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>NewView</title>
+	<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="">
+</head>
+<body style="background-image:url({% static "img/6.jpg" %});background-repeat: no-repeat;background-attachment: fixed;" class="p-5">
+	
+{% block content %}
+<form action="/viewcheck/{{mform.id}}" method="POST">
+	{% csrf_token %}
+
+    <div class="container bg-light col-8 p-5" style="opacity: 0.9">
+
+    	<h1 class="h1 text-center">Upload Your Profile</h1>
+    	<h3 class="h3 my-3">BasicInformation</h1>
+    	<hr>
+        {%render_field basicform.Uid value=mform.id%}
+	{% for field in basicform.visible_fields %}
+	<div class="my-3">
+		<label for="" class="h6 ">{{field.name}}</label>
+	    {%render_field field class='form-control col-6 '%}
+        {{field.help_text}}
+	</div>
+    {% endfor %}
+
+        <h3 class="h3 my-3">EducationQualification</h1>
+        <hr>
+        {%render_field educationform.Uid value=mform.id%}
+    {% for field in educationform.visible_fields %}
+    <div class="my-3">
+        <label for="" class="h6 ">{{field.name}}</label>
+        {%render_field field class='form-control col-6 '%}
+    </div>
+    {% endfor %}
+
+    	<h3 class="h3 my-3">Responsiblility</h3>
+    	<hr>
+        {%render_field responseform.Uid value=mform.id%}
+    	{% for field in responseform.visible_fields %}
+    		<div class="my-3">
+    			<label for="" class="h6 ">{{field.name}}</label>
+    			{%render_field field class='form-control col-6'%}
+    			{{field.help_text}}
+    		</div>
+    	{% endfor %}
+		
+		<h3 class="h3 my-3">Achivements</h3>
+		<hr>
+        {%render_field achiveform.Uid value=mform.id%}
+    	{% for field in achiveform.visible_fields  %}
+    		<div class="my3">
+    			<label for="" class="h6 ">{{field.name}}</label>
+    			{% render_field field class='form-control col-6'%}
+                
+    		</div>
+    	{% endfor %}
+
+    	<h3 class="h3 my-3">Talent</h3>
+    	<hr>
+        {%render_field talentform.Uid value=mform.id%}
+    	{% for field in talentform.visible_fields  %}
+    		<div class="my3">
+    			<label for="" class="h6">{{field.name}}</label>
+    			{% render_field field class='form-control col-6'%}
+    		</div>
+    	{% endfor %}
+
+    	<h3 class="h3 my-3">Exam</h3>
+    	<hr>
+        {%render_field examform.Uid value=mform.id%}
+    	{% for field in examform.visible_fields  %}
+    		<div class="my3">
+    			<label for="" class="h6">{{field.name}}</label>
+    			{% render_field field class='form-control col-6'%}
+    		</div>
+    	{% endfor %}
+
+    	<h3 class="h3 my-3">WorkingDetails</h3>
+    	<hr>
+        {%render_field workingform.Uid value=mform.id%}
+    	{% for field in workingform.visible_fields  %}
+    		<div class="my3">
+    			<label for="" class="h6">{{field.name}}</label>
+    			{% render_field field class='form-control col-6'%}
+    		</div>
+    	{% endfor %}
+    <button type="submit" class="btn btn-primary float-right my-0">Submit</button>
+    <h3 class="h3"></h3>
+</div>
+</form>
+{% endblock content %}
+
+
+
+	<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
+</body>
+</html>

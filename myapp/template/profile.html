@@ -1,0 +1,260 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+  
+
+	<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="">
+  <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+
+
+</head>
+<body class="amy-crisp-gradient flex-center" >
+	
+
+<div class="container bg-transparent" style="padding-left: 0px; padding-right: 15px;">
+  <div class="card card-primary bg-transparent p-5">
+    <div class="card-heading ">
+      <h3 class="card-title h3 text-center">Upload Your Profile</h3>
+    </div>
+    <div class="card-body">
+      <form name="basicform" id="basicform" method="post" action="/index">
+        {% csrf_token %}
+        <div id="sf1" class="frm">
+          <fieldset>
+            <h3 class="h3">Basic Information</h3>
+
+            <div class="form-group my-2">
+              <label class="col-lg-2 control-label" for="uname">Your Name: </label>
+              <div class="col-lg-6">
+                <input type="text" placeholder="Your Name" id="uname" name="uname" class="form-control" autocomplete="off">
+              </div>
+            </div>
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+            <div class="form-group my-2">
+              <label class="col-lg-2 control-label" for="uemail">Your Email: </label>
+              <div class="col-lg-6">
+                <input type="text" placeholder="Your Email..." id="uemail" name="uemail" class="form-control" autocomplete="off">
+              </div>
+            </div>
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+            <div class="form-group my-2">
+              <label class="col-lg-3 control-label" for="udob">Select Date of Birth: </label>
+              <div class="col-lg-6">
+                <input type="text" placeholder="dd/mm/yyyy" id="uemail" name="udob" class="form-control" autocomplete="off">
+              </div>
+            </div>
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+            <div class="form-group my-2">
+              <label class="col-lg-3 control-label" for="ujoindyear">Enter the year: </label>
+              <div class="col-lg-6">
+                <input type="text" placeholder="yyyy" id="uemail" name="ujoindyear" class="form-control" autocomplete="off">
+              </div>
+            </div>
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+            <div class="form-group my-2">
+              <label class="col-lg-3 control-label" for="uaddress">Address: </label>
+              <div class="col-lg-6">
+                <textarea name="uaddress" class="form-control" style="height:150px"></textarea>
+              </div>
+            </div>
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-primary open1 float-right" type="button">Next <span class="fa fa-arrow-right"></span></button> 
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
+
+        <div id="sf2" class="frm" style="display: none;">
+          <fieldset>
+            <h3 class="h3">Extra Carricular Activities</h3>
+
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label" for="uemail">Your Email: </label>
+              <div class="col-lg-6">
+                <input type="text" placeholder="Your Email" id="uemail" name="uemail" class="form-control" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+
+
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-warning back2" type="button"><span class="fa fa-arrow-left"></span> Back</button> 
+                <button class="btn btn-primary open2 float-right" type="button">Next <span class="fa fa-arrow-right"></span></button> 
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div id="sf3" class="frm" style="display: none;">
+          <fieldset>
+            <legend>Step 3 of 3</legend>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label" for="upass1">Password: </label>
+              <div class="col-lg-6">
+                <input type="password" placeholder="Your Password" id="upass1" name="upass1" class="form-control" autocomplete="off">
+              </div>
+            </div>
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+            <div class="form-group">
+              <label class="col-lg-2 control-label" for="upass1">Confirm Password: </label>
+              <div class="col-lg-6">
+                <input type="password" placeholder="Confirm Password" id="upass2" name="upass2" class="form-control" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="clearfix" style="height: 10px;clear: both;"></div>
+
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-warning back3" type="button"><span class="fa fa-arrow-left"></span> Back</button> 
+                <button class="btn btn-primary open3 float-right" type="submit" >Submit </button> 
+                <img src="spinner.gif" alt="" id="loader" style="display: none">
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+	var v = $("form[name='basicform']").validate({
+      rules: {
+        uname: {
+          required: true,
+          minlength: 2,
+          maxlength: 16
+        },
+        uemail: {
+          required: true,
+          minlength: 2,
+          email: true,
+          maxlength: 100,
+        },
+        upass1: {
+          required: true,
+          minlength: 6,
+          maxlength: 15,
+        },
+        upass2: {
+          required: true,
+          minlength: 6,
+          equalTo: "#upass1",
+        }
+
+      },
+      errorElement: "span",
+      errorClass: "help-inline-error",
+    });
+
+    $(".open1").click(function() {
+    	if(v.form())
+    	{
+    		$(".frm").hide("fast");
+        	$("#sf2").show("slow");
+    	}
+        
+    });
+
+ 
+
+  $(".open1").click(function() {
+        if(v.form())
+        {
+        	$(".frm").hide("fast");
+        	$("#sf2").show("slow");
+        }
+      
+   });
+
+   // Binding next button on second step
+   $(".open2").click(function() {
+        if(v.form())
+        {
+        	$(".frm").hide("fast");
+        	$("#sf3").show("slow");
+        }
+
+    });
+
+     // Binding back button on second step
+    $(".back2").click(function() {
+      $(".frm").hide("fast");
+      $("#sf1").show("slow");
+    });
+
+     // Binding back button on third step
+     $(".back3").click(function() {
+      $(".frm").hide("fast");
+      $("#sf2").show("slow");
+    });
+
+    // $(".open3").click(function() {
+    //   if (v.form()) {
+    //     // optional
+    //     // used delay form submission for a seccond and show a loader image
+    //     $("#loader").show();
+    //      setTimeout(function(){
+    //        $("#basicform").html('');
+    //      }, 1000);
+    //     // Remove this if you are not using ajax method for submitting values
+    //     return true;
+    //   }
+    // });
+
+});
+
+</script>
+
+
+</body>
+</html>

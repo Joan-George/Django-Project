@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+	{% block navi %}
+	    {% include "AllProfileNavigation.html" %}
+	{% endblock navi %}
+
+	{% block content %}
+	    {% include "AllProfileContent.html" %}
+	{% endblock content %}
+{% endblock body %}

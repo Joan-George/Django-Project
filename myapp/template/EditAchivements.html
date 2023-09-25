@@ -1,0 +1,26 @@
+{% extends "BaseEdit.html" %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+
+<form action="/updateachivements/{{achivement.id}}/{{achivement.Uid}}" method="post" >
+	
+{% csrf_token %}
+<div class="container p-5">
+	<div class="card p-5">
+		<div class="card-header h2">Exam</div>
+		{% render_field achivementform.Uid value=achivement.Uid%}
+		{% for field in achivementform.visible_fields %}
+		<div class="my-3">
+    			<label for="" class="h6 ">{{field.name}}</label>
+    			{%render_field field class='form-control col-6' %}
+    		</div>
+	{% endfor %}
+	<button type="submit" class="btn btn-success">Submit</button>
+	</div>
+	
+</div>
+</form>
+	
+{% endblock content %}

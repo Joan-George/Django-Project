@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body >
+	{% load staticfiles %}
+	<div class="view"  >
+		<img src="{% static 'img/6.jpg' %}" class="img-fluid w-100" alt="">
+    <div class="mask flex-center rgba-black-strong">
+        <a href="/allprofile/{{form.id}}" title="view" class="btn btn-outline-white">See all prfile <i class="fa fa-chevron-right mx-1"></i></a>
+    </div>
+</div>
+
+	<h3 class="h3 text-center my-5">Our Staffs</h3>
+	<hr class="col-2">
+
+<div class="container jumbotron my-5">
+	<div class="row p-5">
+		<div class="col-md-4">
+			
+		
+				<div class="card z-depth-4  my-4">
+					<span class="card-header">Staff</span>
+					<div class="view overlay">
+						<img src="{% static 'img/6.jpg' %}"  class="card-img-top "  alt="">
+						<div class="mask flex-center text-white rgba-stylish-strong">
+							<a href="http://boscosir.online" target="_blank" title="boscosir.online" class="text-white"><i class="fa fa-search"></i></a>
+					</div>
+					</div>
+					
+					
+					<div class="card-body">
+						<h3 class="card-title"><i class="fa fa-graduation-cap"></i> Mr.s.JohnBosco</h3>
+						<span class="card-text">“Pan, who and what art thou?" he cried huskily.
+                           "I'm youth, I'm joy," Peter answered at a venture, "I'm a little bird that has broken out of the egg.”
+                       </span>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+			
+		
+				<div class="card z-depth-4  my-4">
+					<span class="card-header">Staff</span>
+					<div class="view overlay">
+						<img src="{% static 'img/6.jpg' %}"  class="card-img-top "  alt="">
+						<div class="mask flex-center text-white rgba-stylish-strong">
+							<a href="http://boscosir.online" target="_blank" title="boscosir.online" class="text-white"><i class="fa fa-search"></i></a>
+					</div>
+					</div>
+					
+					
+					<div class="card-body">
+						<h3 class="card-title"><i class="fa fa-graduation-cap"></i> Mr.s.JohnBosco</h3>
+						<span class="card-text">“Pan, who and what art thou?" he cried huskily.
+                           "I'm youth, I'm joy," Peter answered at a venture, "I'm a little bird that has broken out of the egg.”
+                       </span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+</div>
+	
+</body>
+</html>
